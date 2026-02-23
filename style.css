@@ -1,85 +1,226 @@
 :root {
-    --primary-color: #0366d6;
-    --text-color: #24292e;
-    --text-muted: #586069;
-    --bg-color: #ffffff;
-    --border-color: #eaecef;
-    --card-border-color: #e1e4e8;
-    --chip-bg-color: #f1f8ff;
-    --chip-border-color: #c8e1ff;
+    /* M3 Colors - Light Theme (default) */
+    --md-sys-color-primary: #0061a4;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #d1e4ff;
+    --md-sys-color-on-primary-container: #001d36;
+    --md-sys-color-secondary: #535f70;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #d7e3f7;
+    --md-sys-color-on-secondary-container: #101c2b;
+    --md-sys-color-tertiary: #6b5778;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #f2daff;
+    --md-sys-color-on-tertiary-container: #251431;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-outline: #73777f;
+    --md-sys-color-background: #fdfcff;
+    --md-sys-color-on-background: #1a1c1e;
+    --md-sys-color-surface: #fdfcff;
+    --md-sys-color-on-surface: #1a1c1e;
+    --md-sys-color-surface-variant: #dfe2eb;
+    --md-sys-color-on-surface-variant: #43474e;
+    --md-sys-color-inverse-surface: #2f3033;
+    --md-sys-color-inverse-on-surface: #f1f0f4;
+
+    /* Semantic Mappings */
+    --primary-color: var(--md-sys-color-primary);
+    --text-color: var(--md-sys-color-on-background);
+    --text-muted: var(--md-sys-color-on-surface-variant);
+    --bg-color: var(--md-sys-color-background);
+    --chip-bg: var(--md-sys-color-secondary-container);
+    --chip-text: var(--md-sys-color-on-secondary-container);
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    line-height: 1.6;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 1rem;
     color: var(--text-color);
     background-color: var(--bg-color);
 }
-h1, h2 {
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: .3em;
+
+h1, h2, h3 {
+    color: var(--md-sys-color-on-surface);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
 }
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.75rem; border-bottom: none; padding-bottom: 0; }
+h3 { font-size: 1.25rem; }
+
 a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
+
 a:hover {
+    color: var(--md-sys-color-primary-container);
     text-decoration: underline;
 }
+
 .profile-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 28px;
 }
+
+.profile-header h1 {
+    margin-top: 0;
+    font-weight: 500;
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.profile-header p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
 .social-links {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
+
 .social-links a {
-    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-primary);
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin: 0;
 }
+
+.social-links a:hover {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    text-decoration: none;
+}
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
+
 .chip {
-    background-color: var(--chip-bg-color);
-    color: var(--primary-color);
-    padding: 5px 12px;
-    border-radius: 16px;
-    font-size: 0.9rem;
-    border: 1px solid var(--chip-border-color);
+    background-color: var(--chip-bg);
+    color: var(--chip-text);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
     font-weight: 500;
+    border: none;
 }
+
 .project-list {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
+
 .project-item {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border: 1px solid var(--card-border-color);
-    border-radius: 6px;
+    background-color: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease-in-out;
 }
+
+.project-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 .project-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    display: block;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--md-sys-color-on-surface);
 }
+
 .project-description {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
+
 .project-links {
     display: flex;
-    gap: 15px;
-    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.85rem;
 }
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    color: var(--md-sys-color-primary);
+}
+
+.project-links a:hover {
+    background-color: var(--md-sys-color-primary-container);
+    text-decoration: none;
+}
+
 .social-links i, .project-links i, .project-title i {
-    margin-right: 5px;
+    margin-right: 8px;
+}
+
+.back-link-container {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    background-color: var(--md-sys-color-secondary);
+    color: var(--md-sys-color-on-secondary);
+    text-decoration: none;
+}
+
+.back-link i {
+    margin-right: 8px;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 600px) {
+    .project-list {
+        grid-template-columns: 1fr;
+    }
 }
