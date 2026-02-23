@@ -31,6 +31,18 @@
     --bg-color: var(--md-sys-color-background);
     --chip-bg: var(--md-sys-color-secondary-container);
     --chip-text: var(--md-sys-color-on-secondary-container);
+
+    /* Spacing (px) */
+    --space-6: 6px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+
+    /* Radii (px) */
+    --radius-s: 8px;
+    --radius-m: 12px;
+    --radius-l: 20px;
+    --radius-xl: 28px;
 }
 
 body {
@@ -71,7 +83,7 @@ a:hover {
     padding: 2rem;
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    border-radius: 28px;
+    border-radius: var(--radius-xl);
 }
 
 .profile-header h1 {
@@ -89,16 +101,16 @@ a:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: var(--space-12);
 }
 
 .social-links a {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
+    padding: var(--space-8) var(--space-16);
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-primary);
-    border-radius: 20px;
+    border-radius: var(--radius-l);
     font-weight: 500;
     font-size: 0.9rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -114,15 +126,15 @@ a:hover {
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--space-8);
     margin-top: 1rem;
 }
 
 .chip {
     background-color: var(--chip-bg);
     color: var(--chip-text);
-    padding: 6px 16px;
-    border-radius: 8px;
+    padding: var(--space-6) var(--space-16);
+    border-radius: var(--radius-s);
     font-size: 0.875rem;
     font-weight: 500;
     border: none;
@@ -140,7 +152,7 @@ a:hover {
 .project-item {
     background-color: var(--md-sys-color-surface);
     border: 1px solid var(--md-sys-color-outline);
-    border-radius: 12px;
+    border-radius: var(--radius-m);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -167,9 +179,9 @@ a:hover {
 
 .project-details-card {
     background-color: var(--md-sys-color-surface);
-    margin: auto 12px 12px 12px;
+    margin: auto var(--space-12) var(--space-12) var(--space-12);
     padding: 1rem;
-    border-radius: 12px;
+    border-radius: var(--radius-m);
     position: relative;
     z-index: 3;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -184,16 +196,16 @@ a:hover {
 .project-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: var(--space-12);
     font-size: 0.85rem;
 }
 
 .project-links a {
     display: inline-flex;
     align-items: center;
-    padding: 6px 12px;
+    padding: var(--space-6) var(--space-12);
     border: 1px solid var(--md-sys-color-outline);
-    border-radius: 8px;
+    border-radius: var(--radius-s);
     color: var(--md-sys-color-primary);
 }
 
@@ -202,8 +214,12 @@ a:hover {
     text-decoration: none;
 }
 
+.link-text {
+    padding-right: var(--space-8);
+}
+
 .social-links i, .project-links i, .project-title i {
-    margin-right: 8px;
+    margin-right: var(--space-8);
 }
 
 /* Remove extra spacing when link contains icon only */
@@ -223,7 +239,7 @@ a:hover {
     padding: 10px 24px;
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
-    border-radius: 20px;
+    border-radius: var(--radius-l);
     font-weight: 500;
 }
 
@@ -234,7 +250,7 @@ a:hover {
 }
 
 .back-link i {
-    margin-right: 8px;
+    margin-right: var(--space-8);
 }
 
 section {
@@ -253,7 +269,7 @@ section {
     position: absolute;
     left: 0;
     width: 100%;
-    padding-top: 12px;
+    padding-top: var(--space-12);
     z-index: 1;
     background: var(--md-sys-color-surface-variant);
 }
